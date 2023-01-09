@@ -1,0 +1,189 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+.container{
+    /* position: relative; */
+    padding:0 100px;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    width: 280px;
+    height: 100vh;
+    background-color: black;
+    right: 0;
+    z-index: -12;
+}
+.container::after{
+    content: 'Healthy';
+    position: absolute;
+    font-size:290px;
+    z-index: -12;
+    bottom: 0px;
+    left:0;
+    font-weight: 600;
+    opacity: 0.2;
+}
+/* .content .bannerImg:hover .container::after{
+    opacity: 1;
+} */
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    padding:40px 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 30px;
+    text-decoration: none;
+    color:black;
+}
+.logo span{
+    color:green;
+}
+header ul{
+    /* position: relative; */
+    display: flex;
+    list-style: none;
+}
+header ul li a{
+    position: relative;
+    margin:0 20px;
+    text-decoration: none;
+    color: black;
+    z-index: 10;
+}
+header ul li:where(:nth-child(3),:nth-child(4)) a{
+    color: white;
+}
+header ul li a::before{
+    content: '';
+    position:absolute;
+    width: 0px;
+    height: 40px;
+    padding:0;
+    background-color:rgb(45, 197, 45);
+    left:-10px;
+    top:-8px;
+    z-index: -1;
+    transition: 0.1s ease-in;
+}
+header ul li a:hover::before,header ul li a.active::before{
+    width: 20px;
+}
+.content{
+    display: flex;
+    justify-content: space-between;
+}
+.content .bannerText{
+    width: 500px;
+}
+.content .bannerText div{
+    position: relative;
+    max-width: 500px;
+    margin-right: 40px;
+    left:40px;
+    display: none;
+}
+.content .bannerText div.active{
+    display: initial;
+}
+/* .content .bannerText div{
+    display: none;
+}
+.content .bannerText div.active{
+    display: initial;
+} */
+.content .bannerText h2{
+    font-size: 40px;
+    font-weight: 700;
+}
+.content .bannerText p{
+    line-height: 25px;
+    margin:10px 0;
+
+}
+.content a{
+    text-decoration: none;
+    position: relative;
+    color:rgb(7, 84, 2);
+    /* border: 1px dashed black; */
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight:700;
+}
+.content a::before{
+    content:'';
+    position:absolute;
+    background-color: rgb(12, 255, 12);
+    width: 20px;
+    height: 120%;
+    top:0;
+    left:0;
+    z-index: -1;
+    transition: 0.5s ease-in;
+}
+.content a:hover::before{
+    width: 100%;
+}
+
+
+.content .bannerImg:hover.bannerImg{
+    transform: translateY(-100px);
+}
+.content .bannerImg{
+
+    transition: 0.5s ease-in-out;
+}
+.bannerImg img{
+    width: 400px;
+    height: 400px;
+    display: none;
+    /* transition: 5s ease-in-out; */
+}
+.bannerImg img.active{
+    display: initial;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:40px;
+    /* margin-right:200px; */
+}
+.icons ul li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    display: inline-block;
+    margin-right: 10px;
+}
+.icons .sci li{
+    max-height: 24px;
+    transition: 0.5s linear;
+    display: inline-block;
+    /* background-color: red; */
+}
+.icons .sci li:hover{
+    transform: translateY(-10px);
+}
+.icons .controls li img{
+    width: 40px;
+    filter: invert(1);
+    transition: 0.5s;
+}
+.icons .controls li img:hover{
+    opacity: 0.5;
+}
+.icons .controls{
+    color:white;
+}
